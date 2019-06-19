@@ -1,0 +1,22 @@
+config:
+  target: 'https://www.yoursite.com.br'
+  # target: 'https://hml.yoursite.com.br'
+  phases:
+    - duration: 10
+      arrivalRate: 30
+  defaults:
+    headers:
+      User-Agent: "Artillery - nalmeida"
+scenarios:
+  - name: "Home"
+    flow:
+    - get:
+        url: "/"
+  - name: "Produtos"
+    flow:
+    - post:
+        url: "/produtos"
+  - name: "Serviços"
+    flow:
+    - get:
+        url: "/servicos"  
